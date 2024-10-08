@@ -14,9 +14,13 @@ console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
 console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 
 */
+let translate = function (word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
 
 function snakeToCamel(str) {
     // Your code here
+    return str.split("_").map(translate).join("");
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -25,4 +29,4 @@ try {
     module.exports = snakeToCamel;
 } catch (e) {
     module.exports = null;
-}
+}

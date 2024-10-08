@@ -11,11 +11,25 @@ Examples:
 console.log(shortestWord('what a wonderful life'));     // 'a'
 console.log(shortestWord('the quick brown fox jumps')); // 'fox'
 console.log(shortestWord('do what you enjoy'));         // 'do'
-
 */
+
 
 let shortestWord = function(sentence) {
   // Your code here
+  let charCount = Infinity;
+  let shortest = "";
+  let words = sentence.split(" ");
+
+  words.forEach(function (word) {
+    let currWordLen = word.length;
+
+      if (currWordLen <= charCount) {
+        charCount = currWordLen;
+        shortest = word;
+      }
+  });
+
+  return shortest;
 };
 
 // Your code here
@@ -26,4 +40,4 @@ try {
   module.exports = shortestWord;
 } catch (e) {
   module.exports = null;
-}
+}
